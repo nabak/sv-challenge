@@ -1,5 +1,5 @@
 <template>
-  <button class='button' :class="`button-theme--${theme}`">
+  <button class='button' v-on:click='onClick ? onClick : Click' :class="`button-theme--${theme}`">
     <slot></slot>
   </button>
 </template>
@@ -7,11 +7,16 @@
 <script>
 export default {
   name: 'Button',
+  methods: {
+    Click() {
+
+    },
+  },
   props: {
     theme: { type: String, default: 'primary' },
+    onClick: { type: Function, required: false },
   },
-  methods: {
-  },
+
 };
 </script>
 

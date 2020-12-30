@@ -1,7 +1,7 @@
 <template>
   <v-btn elevation=0 class='icon-button'
   active-class='' @click='clickButton'>
-    <v-icon>{{icon}}</v-icon>
+    <v-icon>{{iconName}}</v-icon>
   </v-btn>
 </template>
 
@@ -9,12 +9,17 @@
 export default {
   name: 'IconButton',
   props: {
-    icon: { type: String, required: true },
+    icon: { type: String, required: true, default: '' },
+  },
+  data: () => ({
+    iconName: '',
+  }),
+  created() {
+    this.iconName = this.icon;
   },
   methods: {
     clickButton() {
-      this.icon = (this.icon.includes('-outline')) ? this.icon.replace('-outline', '') : `${this.icon}-outline`;
-      console.log('button clicked', this.icon);
+      this.iconName = (this.iconName.includes('-outline')) ? this.iconName.replace('-outline', '') : `${this.iconName}-outline`;
     },
   },
 };

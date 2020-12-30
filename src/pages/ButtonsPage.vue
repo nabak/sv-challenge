@@ -31,17 +31,17 @@
       </v-col>
       <v-col class='' cols='2' style='text-align-last: center !important'>
         <h2 class='main-guide'>
-          <Button> LABEL </Button>
+          <Button :onClick='Click'> LABEL </Button>
         </h2>
       </v-col>
       <v-col cols='2' style='text-align-last: center !important'>
         <h2 class='main-guide'>
-          <Button class='primary-hover'> LABEL</Button>
+          <Button :onClick='Click' class='primary-hover'> LABEL</Button>
         </h2>
       </v-col>
       <v-col cols='2' style='text-align-last: center !important'>
         <h2 class='main-guide'>
-          <Button class='primary-active'> LABEL</Button>
+          <Button :onClick='Click' class='primary-active'> LABEL</Button>
         </h2>
       </v-col>
       <v-col cols='12'></v-col>
@@ -50,17 +50,17 @@
       </v-col>
       <v-col class='' cols='2' style='text-align-last: center !important'>
         <h2 class='main-guide'>
-          <Button theme='secundary'> secundary </Button>
+          <Button :onClick='Click' theme='secundary'> secundary </Button>
         </h2>
       </v-col>
       <v-col cols='2' style='text-align-last: center !important'>
         <h2 class='main-guide'>
-          <Button theme='secundary' class='secundary-hover'> secundary</Button>
+          <Button :onClick='Click' theme='secundary' class='secundary-hover'> secundary</Button>
         </h2>
       </v-col>
       <v-col cols='2' style='text-align-last: center !important'>
         <h2 class='main-guide'>
-          <Button theme='secundary'> secundary</Button>
+          <Button :onClick='Click' theme='secundary'> secundary</Button>
         </h2>
       </v-col>
       <v-col cols='12'></v-col>
@@ -69,17 +69,17 @@
       </v-col>
       <v-col class='' cols='2' style='text-align-last: center !important'>
         <h2 class='main-guide'>
-          <Button disabled> disabled </Button>
+          <Button :onClick='Click' disabled> disabled </Button>
         </h2>
       </v-col>
       <v-col cols='2' style='text-align-last: center !important'>
         <h2 class='main-guide'>
-          <Button disabled> disabled</Button>
+          <Button :onClick='Click' disabled> disabled</Button>
         </h2>
       </v-col>
       <v-col cols='2' style='text-align-last: center !important'>
         <h2 class='main-guide'>
-          <Button disabled> disabled</Button>
+          <Button :onClick='Click' disabled> disabled</Button>
         </h2>
       </v-col>
       <v-col cols='12' style='padding: 12px'> </v-col>
@@ -101,7 +101,7 @@
         <h2 class='sub-title'>SECUNDARY ICON</h2>
       </v-col>
       <v-col cols='1' style='text-align-last: center !important'>
-      <icon-button icon='mdi-video-outline'></icon-button>
+      <icon-button @resetIcon='icon = $event' icon='mdi-video-outline'></icon-button>
       </v-col>
        <v-col cols='1' style='text-align-last: center !important'>
       <icon-button class='icon-button-hover' icon='mdi-video-outline'></icon-button>
@@ -136,6 +136,11 @@ import IconButton from '../components/IconButton.vue';
 
 export default {
   components: { Button, IconButton },
+  methods: {
+    Click() {
+      console.log('ok');
+    },
+  },
   data: () => ({}),
 };
 </script>
